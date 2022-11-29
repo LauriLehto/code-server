@@ -23,11 +23,11 @@ RUN sudo chown -R coder:coder /home/coder/.local
 ENV NODE_VERSION=18.12.1
 RUN sudo apt-get install -y curl
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-ENV NVM_DIR=/root/.nvm
-RUN sudo . "$NVM_DIR/nvm.sh" && sudo nvm install ${NODE_VERSION}
-RUN sudo . "$NVM_DIR/nvm.sh" && sudo nvm use v${NODE_VERSION}
-RUN sudo . "$NVM_DIR/nvm.sh" && sudo nvm alias default v${NODE_VERSION}
-ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+#ENV NVM_DIR=/root/.nvm
+#RUN sudo . "$NVM_DIR/nvm.sh" && sudo nvm install ${NODE_VERSION}
+#RUN sudo . "$NVM_DIR/nvm.sh" && sudo nvm use v${NODE_VERSION}
+#RUN sudo . "$NVM_DIR/nvm.sh" && sudo nvm alias default v${NODE_VERSION}
+#ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN node --version
 RUN npm --version
 
