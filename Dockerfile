@@ -21,7 +21,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Add Node.js
 ENV NODE_VERSION=18.12.1
-RUN apt install -y curl
+RUN apt-get install -y curl
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 ENV NVM_DIR=/root/.nvm
 RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
